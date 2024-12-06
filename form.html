@@ -1,0 +1,35 @@
+<html>
+    <head><title></title>
+    <script>
+        function validateForm(){
+            var name=document.myForm.finame.value;
+            if(name=="" || name==null){
+                alert("First name must be filled out");
+                var firstNameField=document.getElementById("fname");
+                firstNameField.focus();
+                return false;
+            }
+            var name=document.myForm.laname.value;
+            if(name=="" || name==null){
+                alert("Last name must be filled out");
+                var firstNameField=document.getElementById("lname");
+                firstNameField.focus();
+                return false;
+            }
+        }
+    </script>
+    </head>
+    <body>
+        <h1>Form</h1>
+        <form name="myForm" onsubmit="validateForm();">
+            <input type="text" placeholder="first name" name="finame" id="fname" ><br><br>
+            <input type="text" placeholder="middle name" name="mname" id="mname" ><br><br>
+            <input type="text" placeholder="last name" name="laname" id="lname" ><br><br>
+            <textarea type="text" placeholder="Enter your address" name="address" id="addres"></textarea><br><br>
+            <input type="date" id="dob" name="dobi"
+
+            <button type="submit">Submit</button>
+
+        </form>
+    </body>
+</html>

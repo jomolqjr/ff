@@ -1,0 +1,144 @@
+<html>
+ <head>
+ <title>Registeration Form</title>
+ <link rel="stylesheet" href="reg1.css">
+ <script>
+    function validateForm() {
+ var name = document.myForm.finame.value;
+ if (name=="" || name==null) {
+ alert("First Name must be filled out");
+ var firstNameField = document.getElementById("fname");
+ firstNameField.focus();
+ return false;
+ }
+ var name = document.myForm.laname.value;
+ if (name=="" || name==null) {
+ alert("Last Name must be filled out");
+ var firstNameField = document.getElementById("lname");
+ firstNameField.focus();
+ return false;
+ }
+ var name = document.myForm.address.value;
+ if (name=="" || name==null) {
+ alert("Address must be filled out");
+ var firstNameField = document.getElementById("addres");
+ firstNameField.focus();
+ return false;
+ }
+ var name = document.myForm.dobi.value;
+ if (name=="" || name==null) {
+ alert("Select Date of Birth");
+ var firstNameField = document.getElementById("dob");
+ firstNameField.focus();
+ return false;
+ }
+ 
+ var name = document.myForm.gender.value;
+ if (name=="" || name==null) {
+ alert("Select Gender");
+ var firstNameField = document.getElementById("dobir");
+ firstNameField.focus();
+ return false;
+ }
+ var name = document.myForm.mobnu.value;
+ var mobileRegex = /^[6-9]\d{9}$/; 
+ if (name == "" || name == null) {
+ alert("Enter Mobile Number");
+ var firstNameField = document.getElementById("mobnu");
+ firstNameField.focus();
+ return false;
+ } else if (!mobileRegex.test(name)) { 
+ alert("Enter valid Mobile Number");
+ var firstNameField = document.getElementById("mobnu");
+ firstNameField.focus();
+ return false;
+ }
+ var email = document.myForm.Email.value;
+ var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; 
+ if (email === "" || email === null) {
+ alert("Enter Email !!")
+ var firstNameField = document.getElementById("email");
+ firstNameField.focus();
+ return false;
+ } else if (!emailRegex.test(email)) {
+ alert("Enter Valid Email !!")
+ var firstNameField = document.getElementById("email");
+ firstNameField.focus();
+ return false;
+ }
+ var name = document.myForm.coname.value;
+ if (name=="" || name==null) {
+ alert("Enter Previous course Attented");
+ var firstNameField = document.getElementById("cname");
+ firstNameField.focus();
+ return false;
+ }
+ var selectedOption = document.myForm.course.value;
+ if (selectedOption === "none" || selectedOption === "Select an Option") {
+ alert("Please select an option");
+ var selectField = document.getElementById("li");
+ selectField.focus();
+ return false;
+ } 
+ alert("Registration successful!");
+ return true;
+ 
+ 
+ }
+ </script>
+ </head>
+<body>
+<center>
+<form name="myForm" style="border:3px solid black;width:500px;" onsubmit="validateForm();">
+<b><h2 id="head1">Register Here</h2></b>
+<label for="finame">First Name:</label>
+<input type="text" placeholder="Enter your First Name" name="finame" id="fname"><br>
+<label for="miname">Middle Name:</label>
+<input type="text" placeholder="Enter your Middle Name" name="mname" 
+id="mname"><br>
+<label for="laname">Last Name:</label>
+<input type="text" placeholder="Enter your Last Name" name="laname" id="lname" ><br>
+<label for="aname">Address:</label>
+<textarea type="text" placeholder="Enter your Address here" name="address" id="addres" 
+rows="" cols="33" ></textarea><br>
+<label id="dobi">D O B:</label>
+ <input type="date" id="dob" name="dobi"><br><br>
+<label id="dobir">Gender:</label>
+<div class="gender"> 
+ <input type="radio" name="gender" value="male">Male
+ <input type="radio" name="gender" value="female">Female
+ <input type="radio" name="gender" value="other">Other<br><br>
+</div>
+<label id="mob">Mobile No:</label>
+<input type="text" placeholder="Enter Mobile Number here" name="mobno" 
+id="mobnu"><br>
+<label id="em">Email:</label>
+<input type="text" placeholder="Enter your Email here" name="Email" id="email"><br>
+<label id="course">Previous<br>Course:</label>
+<input type="text" placeholder="Type here" name="coname" id="cname" ><br>
+<br><label for="" id="skill">Skills:</label>
+<div class="op">
+ <input type="checkbox" id="python1" name="python" value="">
+ <label for="">Python</label>
+ <input type="checkbox" id="python2" name="python" value="">
+ <label for="">Python</label>
+ <input type="checkbox" id="python3" name="python" value="">
+ <label for="">Python</label>
+</div>
+ 
+ 
+ 
+<div id="course1"><label >Course:</label></div>
+<select name="course" id="li">
+ <option value="none" selected >Select an Option</option>
+ <option value="mba">MBA</option>
+ <option value="mca">MCA</option>
+ <option value="mtech">M.TECH</option>
+ <option value="btech">B.TECH</option>
+</select><br><br>
+<button type="submit">Submit</button>
+&nbsp; &nbsp; &nbsp; <button type="reset" value="Reset">Reset</button>
+ </form>
+</center>
+</body>
+</html>
